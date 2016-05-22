@@ -1,0 +1,21 @@
+<ion-menu [content]="content">
+
+    <ion-toolbar>
+        <ion-title>Menú Principal</ion-title>
+    </ion-toolbar>
+
+    <ion-content>
+        <ion-list>
+            <button ion-item *ngFor="let p of dataService.pages" (click)="openPage(p)">
+                    <ion-icon name="{{p.icon}}"></ion-icon>
+                {{p.title}}
+            </button>
+            <button menuClose ion-item (click)="cerrarSesion()">
+                    <ion-icon name="log-out"></ion-icon> Cerrar Sesion
+            </button>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav id="nav" [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>

@@ -1,0 +1,31 @@
+<ion-navbar *navbar primary>
+    <ion-title>
+        Bienvenido
+    </ion-title>
+</ion-navbar>
+
+<ion-content class="login">
+    <form [ngFormModel]="loginForm">
+        <ion-list>
+            <ion-item>
+                <ion-icon name="person" item-left></ion-icon>
+                <ion-label floating>Usuario</ion-label>
+                <ion-input type="text" ngControl="login" [(ngModel)]="usuario" #user>maguilleng</ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-icon name="key" item-left></ion-icon>
+                <ion-label floating>Contraseña</ion-label>
+                <ion-input type="password" ngControl="password" [(ngModel)]="contrasena" #password>Fender31</ion-input>
+            </ion-item>
+        </ion-list>
+        <div [hidden]="!loginError" class="form-error">Usuario o contraseña Incorrectos. Intenta Nuevamente</div>
+        <ion-list padding>  
+            <!--<ion-item>-->
+                <button (click)="iniciarSesion()" [disabled]="!loginForm.valid" block>Iniciar Sesion</button>
+            <!--</ion-item>-->
+            <!--<button (click)="insertarUsuario()">Insertar Usuario</button>
+            <button (click)="showSpinner()">Mostrar Spinner</button>-->
+        </ion-list>
+    </form>
+</ion-content>

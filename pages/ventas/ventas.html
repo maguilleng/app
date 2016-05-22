@@ -1,0 +1,16 @@
+<ion-navbar *navbar primary>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+        Ventas
+    </ion-title>
+</ion-navbar>
+
+<ion-content padding class="ventas">
+    <ion-list>
+        <button ion-item (click)="openPage(nuevaVenta)"> Nueva Venta </button>
+        <button ion-item (click)="openPage(VentasPage)"> Resumen Ventas </button>
+    </ion-list>
+</ion-content>
